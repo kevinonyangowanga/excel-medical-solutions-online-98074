@@ -1,0 +1,33 @@
+
+const WestMidlandsSEOContent = () => {
+  return (
+    <section className="py-8 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <img 
+              src="/lovable-uploads/0c1b40ce-51a3-47d7-b762-cfd160fb398f.png"
+              alt="Birmingham cityscape West Midlands region"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+              width={800}
+              height={384}
+            />
+          </div>
+          <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <img
+              src="/lovable-uploads/e23e031a-79ad-4b0b-ae1b-7c3117ac8f94.png"
+              alt="EMS staff at night event with funfair and fireworks"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+              width={800}
+              height={384}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WestMidlandsSEOContent;

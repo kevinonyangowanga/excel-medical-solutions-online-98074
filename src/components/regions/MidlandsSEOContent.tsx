@@ -1,0 +1,12 @@
+
+const MidlandsSEOContent = () => {
+  return (
+    <div className="sr-only">
+      <h2>Event Medical Services Midlands - Complete Coverage</h2>
+      <p>Excel Medical Solutions provides professional event medical cover, ambulance hire, first aid services and paramedic support across the Midlands including:</p>
+      <p>Event medical Birmingham, first aid Nottingham, ambulance hire Leicester, paramedic services Derby, event medical Coventry, first aid Wolverhampton, ambulance hire Stoke-on-Trent, medical cover Worcester, event medical Northampton, first aid Mansfield, ambulance hire Shrewsbury, paramedic services Telford, event medical Hereford, first aid Gloucester, ambulance hire Cheltenham, medical cover Warwick, event medical Stratford-upon-Avon, first aid Rugby, ambulance hire Nuneaton, paramedic services Tamworth, event medical Burton upon Trent, first aid Stafford, ambulance hire Cannock, medical cover Kidderminster, event medical Redditch, first aid Bromsgrove, ambulance hire Solihull, paramedic services West Bromwich, event medical Walsall, first aid Dudley, ambulance hire Sutton Coldfield, medical cover Chesterfield, event medical Worksop, first aid Kettering, ambulance hire Wellingborough, paramedic services Corby, event medical Rushden, first aid Daventry, ambulance hire Leamington Spa, medical cover Bedworth, event medical Kenilworth, first aid Atherstone, ambulance hire Alcester, paramedic services Southam, event medical Shipston-on-Stour, first aid Studley, ambulance hire Newcastle-under-Lyme, medical cover Lichfield, event medical Rugeley, first aid Leek, ambulance hire Stone, paramedic services Uttoxeter, event medical Burntwood, first aid Stourbridge, ambulance hire Halesowen, medical cover Oldbury, event medical Rowley Regis, West Midlands first aid, East Midlands ambulance hire, Staffordshire medical cover, Warwickshire event medical, Leicestershire first aid, Nottinghamshire ambulance hire, Derbyshire medical cover, Northamptonshire event medical, Worcestershire first aid, Herefordshire ambulance hire, Gloucestershire medical cover, Shropshire event medical, Peak District first aid, Cannock Chase ambulance hire, Malvern Hills medical cover, Cotswolds event medical, Birmingham NEC first aid, Resorts World Arena ambulance hire, Villa Park medical cover, St Andrews event medical, Pride Park first aid, King Power Stadium ambulance hire, Ricoh Arena medical cover, Molineux event medical, Goodison Park first aid, Old Trafford ambulance hire.</p>
+    </div>
+  );
+};
+
+export default MidlandsSEOContent;
