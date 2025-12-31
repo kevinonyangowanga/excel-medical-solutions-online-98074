@@ -34,6 +34,7 @@ const Header = () => {
     { name: "Training", href: "/training" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
+    { name: "Client Portal", href: "/auth" },
   ];
 
   const isActivePath = (path: string) => location.pathname === path;

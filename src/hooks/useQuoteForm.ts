@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface FormData {
   name: string;
@@ -49,40 +49,34 @@ export const useQuoteForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    
     setIsSubmitting(true);
     
     try {
-      // Create mailto link
-      const subject = encodeURIComponent(`Quote Request - ${formData.eventType}`);
-      const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Event Type: ${formData.eventType}
-Event Date: ${formData.eventDate}
-Location: ${formData.location}
-Expected Attendees: ${formData.attendees}
-Additional Information: ${formData.message}
-      `);
-      
-      const mailtoLink = `mailto:events@excelems.com?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
+      const { error } = await supabase.from('contact_submissions').insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || null,
+        event_type: formData.eventType || null,
+        event_date: formData.eventDate || null,
+        attendees: formData.attendees || null,
+        message: formData.message || null,
+      });
+
+      if (error) throw error;
       
       toast({
-        title: "Quote Request Prepared",
-        description: "Your email client will open with the quote request ready to send.",
+        title: "Quote Request Submitted!",
+        description: "We'll get back to you within 2 hours during business hours.",
       });
 
       resetForm();
       
     } catch (error) {
-      console.error("Error preparing email:", error);
-      
+      console.error("Error submitting form:", error);
       toast({
         title: "Error",
-        description: "There was an issue preparing your quote request. Please try again.",
+        description: "There was an issue submitting your request. Please try again.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
