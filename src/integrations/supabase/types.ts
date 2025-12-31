@@ -14,7 +14,259 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          attendees: string | null
+          company: string | null
+          created_at: string
+          email: string
+          event_date: string | null
+          event_type: string | null
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          attendees?: string | null
+          company?: string | null
+          created_at?: string
+          email: string
+          event_date?: string | null
+          event_type?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          attendees?: string | null
+          company?: string | null
+          created_at?: string
+          email?: string
+          event_date?: string | null
+          event_type?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      course_bookings: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string
+          participants: number | null
+          phone: string | null
+          session_id: string
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          participants?: number | null
+          phone?: string | null
+          session_id: string
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          participants?: number | null
+          phone?: string | null
+          session_id?: string
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_bookings_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "course_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      course_sessions: {
+        Row: {
+          available_spots: number
+          course_id: string
+          created_at: string
+          id: string
+          location: string | null
+          session_date: string
+          start_time: string
+        }
+        Insert: {
+          available_spots: number
+          course_id: string
+          created_at?: string
+          id?: string
+          location?: string | null
+          session_date: string
+          start_time: string
+        }
+        Update: {
+          available_spots?: number
+          course_id?: string
+          created_at?: string
+          id?: string
+          location?: string | null
+          session_date?: string
+          start_time?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_sessions_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "training_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          company_name: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_name?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_name?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      quote_requests: {
+        Row: {
+          additional_requirements: string | null
+          company: string | null
+          created_at: string
+          email: string
+          estimated_quote: number | null
+          event_date: string | null
+          event_duration_hours: number | null
+          event_type: string
+          expected_attendees: number | null
+          id: string
+          location: string | null
+          name: string
+          phone: string | null
+          service_level: string | null
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          additional_requirements?: string | null
+          company?: string | null
+          created_at?: string
+          email: string
+          estimated_quote?: number | null
+          event_date?: string | null
+          event_duration_hours?: number | null
+          event_type: string
+          expected_attendees?: number | null
+          id?: string
+          location?: string | null
+          name: string
+          phone?: string | null
+          service_level?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          additional_requirements?: string | null
+          company?: string | null
+          created_at?: string
+          email?: string
+          estimated_quote?: number | null
+          event_date?: string | null
+          event_duration_hours?: number | null
+          event_type?: string
+          expected_attendees?: number | null
+          id?: string
+          location?: string | null
+          name?: string
+          phone?: string | null
+          service_level?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      training_courses: {
+        Row: {
+          category: string | null
+          created_at: string
+          description: string | null
+          duration: string | null
+          id: string
+          is_active: boolean | null
+          max_participants: number | null
+          price: number | null
+          title: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          duration?: string | null
+          id?: string
+          is_active?: boolean | null
+          max_participants?: number | null
+          price?: number | null
+          title: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          duration?: string | null
+          id?: string
+          is_active?: boolean | null
+          max_participants?: number | null
+          price?: number | null
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
