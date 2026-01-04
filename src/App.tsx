@@ -42,6 +42,7 @@ import Auth from "./pages/Auth";
 import Portal from "./pages/Portal";
 import Quote from "./pages/Quote";
 import TrainingBook from "./pages/TrainingBook";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
             <Route path="/auth" element={<Auth />} />
             <Route path="/portal" element={<Portal />} />
             <Route path="/quote" element={<Quote />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/regions/london" element={<London />} />
             <Route path="/regions/london-south-east" element={<LondonSouthEast />} />
             <Route path="/regions/east-midlands" element={<EastMidlands />} />
