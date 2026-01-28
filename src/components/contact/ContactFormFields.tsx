@@ -61,7 +61,7 @@ const ContactFormFields = ({ formData, onInputChange, disabled }: ContactFormFie
             value={formData.phone}
             onChange={onInputChange}
             required
-            placeholder="07XXX XXX XXX"
+            placeholder="+254 7XX XXX XXX"
             disabled={disabled}
           />
         </div>
